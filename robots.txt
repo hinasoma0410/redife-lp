@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-# 正式ドメイン確定後に Sitemap のURLを追記してください。
+Sitemap: https://hinasoma0410.github.io/redife-lp/sitemap.xml

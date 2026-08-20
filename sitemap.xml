@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 正式ドメイン確定後に絶対URLで生成してください。公開前プレビューでは空のURLセットとします。 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hinasoma0410.github.io/redife-lp/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/services/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/services/follow-up/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/services/case-lp/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/services/business-app/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/contact/</loc></url>
+  <url><loc>https://hinasoma0410.github.io/redife-lp/privacy/</loc></url>
+</urlset>
