@@ -1,0 +1,93 @@
+.editorial-page{--paper:#f8f5ee;--editorial-ink:#20251f;--editorial-green:#356c4d;--editorial-green-soft:#e6efe8;background:var(--paper)}
+.editorial-page .site-header{background:rgba(248,245,238,.94)}
+.editorial-page main{background-image:linear-gradient(rgba(53,108,77,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(53,108,77,.055) 1px,transparent 1px);background-size:82px 82px}
+.editorial-page h1,.editorial-page h2,.editorial-page h3{color:var(--editorial-ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:600;letter-spacing:-.045em}
+.editorial-page .eyebrow{color:var(--editorial-green);font-size:13px;letter-spacing:.2em}
+.editorial-page .breadcrumb{padding-top:36px}
+.service-hub-hero{padding:70px 0 72px}
+.service-hub-hero h1{max-width:840px;margin:0;font-size:clamp(52px,7vw,94px);line-height:1.14}
+.service-hub-lead{max-width:790px;margin:34px 0 0;color:#526057;font-size:17px}
+.service-jump-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.service-jump-card{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:end;min-height:132px;padding:26px;background:rgba(255,255,255,.88);border:1px solid #d4d8d1;border-radius:18px;box-shadow:0 12px 28px rgba(24,41,31,.06)}
+.service-jump-card>span:first-child{color:#7fa58c;font-family:Georgia,serif;font-size:36px;line-height:1}
+.service-jump-card small,.service-jump-card strong{display:block}
+.service-jump-card small{color:var(--editorial-green);font-size:11px;font-weight:800}
+.service-jump-card strong{margin-top:5px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:20px}
+.service-overview{padding:118px 0;border-top:1px solid rgba(53,108,77,.14);background:rgba(248,245,238,.86)}
+.service-overview:nth-of-type(even){background:rgba(255,255,255,.68)}
+.service-overview-head{display:grid;grid-template-columns:180px minmax(0,1fr);gap:50px;align-items:start}
+.service-overview-number{color:#8db19a;font-family:Georgia,serif;font-size:clamp(80px,10vw,140px);line-height:.85}
+.service-overview h2{margin:4px 0 20px;font-size:clamp(44px,5.5vw,72px);line-height:1.16}
+.service-overview-copy{max-width:800px;margin:0;color:#536158;font-size:17px}
+.service-overview-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;margin-top:48px}
+.editorial-card{padding:34px;background:rgba(255,255,255,.92);border:1px solid #d6dbd5;border-radius:22px;box-shadow:0 15px 35px rgba(28,45,35,.06)}
+.editorial-card h3{margin:0 0 22px;font-size:26px;line-height:1.35}
+.editorial-card ul{margin:0;padding:0;list-style:none}
+.editorial-card li{position:relative;padding:14px 0 14px 26px;border-top:1px solid #e0e4df;color:#4f5d54}
+.editorial-card li::before{content:"";position:absolute;top:23px;left:3px;width:7px;height:7px;background:var(--editorial-green);border-radius:50%}
+.editorial-card li:last-child{border-bottom:1px solid #e0e4df}
+.service-price-card{display:flex;flex-direction:column;background:var(--editorial-green-soft)}
+.service-price-card small{color:#526159;font-weight:800}
+.service-price-card strong{display:block;margin:8px 0 18px;color:var(--editorial-green);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(46px,5vw,66px);line-height:1}
+.service-price-card p{color:#526159;font-size:14px}
+.service-price-card .button{width:100%;margin-top:auto}
+.service-detail-link{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-top:24px;padding:24px 28px;border:1px solid var(--editorial-green);border-radius:18px;color:var(--editorial-green);font-weight:800}
+.service-detail-link span:last-child{white-space:nowrap}
+.case-hero{padding:72px 0 90px;background:linear-gradient(118deg,rgba(255,255,255,.94) 0 52%,rgba(226,241,232,.86) 100%)}
+.case-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.case-hero h1{margin:0;font-size:clamp(52px,6.4vw,86px);line-height:1.13}
+.case-hero h1 em{color:var(--editorial-green);font-style:normal}
+.case-hero-copy>p:last-child{max-width:680px;margin:30px 0 0;color:#536158;font-size:17px}
+.case-price-panel{padding:38px;background:rgba(255,255,255,.92);border:1px solid #d5ddd7;border-radius:26px;box-shadow:0 24px 55px rgba(30,67,46,.12)}
+.case-price-panel>small{font-weight:800}
+.case-price-panel>strong{display:block;margin:6px 0 22px;color:var(--editorial-green);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(52px,6vw,78px);line-height:1}
+.case-price-panel hr{border:0;border-top:1px solid #dce1dd;margin:24px 0}
+.case-price-panel p{margin:20px 0;color:#59665e;font-size:13px}
+.case-price-panel .button{width:100%}
+.scope-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.scope-tags span{padding:7px 10px;border-radius:999px;background:var(--editorial-green-soft);color:var(--editorial-green);font-size:12px;font-weight:800}
+.case-section{padding:112px 0;background:rgba(248,245,238,.9);border-top:1px solid rgba(53,108,77,.13)}
+.case-section.alt{background:rgba(255,255,255,.78)}
+.case-section-heading{max-width:900px;margin-bottom:46px}
+.case-section-heading h2{margin:0;font-size:clamp(40px,5.2vw,66px);line-height:1.2}
+.case-section-heading>p:last-child{max-width:760px;color:#58655d}
+.pain-list,.benefit-grid,.scope-grid,.case-work-grid{display:grid;gap:18px}
+.pain-list{grid-template-columns:repeat(2,1fr);margin:0;padding:0;list-style:none}
+.pain-list li{padding:24px 26px;background:#fff;border:1px solid #d7ddd8;border-radius:16px;font-weight:700}
+.scope-grid{grid-template-columns:1fr 1fr}
+.scope-column{padding:34px;border:1px solid #d7ddd8;border-radius:22px;background:#fff}
+.scope-column.separate{background:#f1eee5}
+.scope-column h3{margin:0 0 22px;font-size:28px}
+.scope-column dl{margin:0}
+.scope-column dt{margin-top:22px;color:var(--editorial-green);font-weight:900}
+.scope-column dd{margin:5px 0 0;color:#59665e}
+.benefit-grid{grid-template-columns:repeat(3,1fr)}
+.benefit-card{min-height:270px;padding:30px;background:#fff;border:1px solid #d7ddd8;border-radius:20px}
+.benefit-card>span{color:#8db19a;font-family:Georgia,serif;font-size:52px}
+.benefit-card h3{margin:20px 0 10px;font-size:25px}
+.benefit-card p{color:#59665e}
+.case-work-grid{grid-template-columns:repeat(3,1fr)}
+.case-work-card{overflow:hidden;background:#fff;border:1px solid #d7ddd8;border-radius:20px}
+.case-work-visual{display:grid;place-items:center;aspect-ratio:16/10;background:var(--editorial-green-soft);color:var(--editorial-green);font-family:Georgia,serif;font-size:34px;font-weight:700;letter-spacing:.12em}
+.case-work-card:nth-child(2) .case-work-visual{background:#eee1cf;color:#6d5235}
+.case-work-card:nth-child(3) .case-work-visual{background:#dde3df;color:#3d5c4b}
+.case-work-body{padding:24px}
+.case-work-body h3{margin:5px 0 8px;font-size:24px}
+.case-work-body p{color:#59665e;font-size:14px}
+.case-work-body .text-link{display:inline-block;margin-top:8px}
+.case-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.case-flow li{padding:24px 20px;background:#fff;border:1px solid #d7ddd8;border-radius:18px}
+.case-flow span{color:#8db19a;font-family:Georgia,serif;font-size:34px}
+.case-flow h3{margin:22px 0 8px;font-size:21px}
+.case-flow p{color:#59665e;font-size:13px}
+.case-faq details{padding:24px 0;border-top:1px solid #ccd5cf}
+.case-faq details:last-child{border-bottom:1px solid #ccd5cf}
+.case-faq summary{cursor:pointer;font-weight:800}
+.case-faq details p{max-width:820px;margin:14px 0 0;color:#59665e}
+.editorial-cta{padding:84px 0;background:var(--editorial-green);color:#fff}
+.editorial-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:40px}
+.editorial-cta h2{margin:0;color:#fff;font-size:clamp(38px,4.8vw,60px);line-height:1.2}
+.editorial-cta p{margin:14px 0 0;color:#dce9e0}
+.editorial-cta .button{flex:0 0 auto;background:#fff;border-color:#fff;color:var(--editorial-green)}
+@media(max-width:960px){.service-jump-grid,.benefit-grid,.case-work-grid{grid-template-columns:1fr}.service-overview-head,.service-overview-grid,.case-hero-grid,.scope-grid{grid-template-columns:1fr}.service-overview-head{gap:20px}.service-overview-number{font-size:78px}.case-flow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.editorial-page main{background-size:54px 54px}.service-hub-hero,.case-hero{padding:48px 0 60px}.service-hub-hero h1,.case-hero h1{font-size:clamp(42px,13vw,58px)}.service-hub-lead,.case-hero-copy>p:last-child{font-size:15px}.service-jump-grid{gap:10px;margin-top:36px}.service-jump-card{min-height:104px;padding:20px}.service-overview,.case-section{padding:78px 0}.service-overview h2,.case-section-heading h2{font-size:38px}.editorial-card,.scope-column,.case-price-panel{padding:24px}.service-detail-link,.editorial-cta-inner{align-items:flex-start;flex-direction:column}.pain-list,.case-flow{grid-template-columns:1fr}.benefit-card{min-height:0}.editorial-cta{padding:64px 0}}
