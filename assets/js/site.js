@@ -18,21 +18,4 @@
       });
     });
   }
-
-  const form = document.querySelector('[data-contact-form]');
-  if (form) {
-    const status = form.querySelector('[data-form-status]');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      if (status) {
-        status.textContent = 'このページは公開前プレビューです。安全な送信先が確定するまで、入力内容は送信・保存されません。';
-        status.classList.add('is-visible');
-        status.focus();
-      }
-    });
-  }
 })();
