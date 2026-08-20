@@ -18,4 +18,129 @@
       });
     });
   }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const gsapAvailable = typeof window.gsap !== 'undefined';
+
+  if (gsapAvailable && !reducedMotion.matches) {
+    const { gsap } = window;
+
+    const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    const heroCopy = document.querySelector('.hero-copy');
+
+    if (heroCopy) {
+      heroTimeline
+        .fromTo(heroCopy.querySelector('.eyebrow'), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.55 })
+        .fromTo(heroCopy.querySelector('h1'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8 }, '-=0.28')
+        .fromTo(heroCopy.querySelector('.hero-lead'), { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.65 }, '-=0.48')
+        .fromTo(heroCopy.querySelector('.hero-actions'), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.55 }, '-=0.4')
+        .fromTo(heroCopy.querySelectorAll('.trust-list li'), { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.4, stagger: 0.08 }, '-=0.3');
+    }
+
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+      heroTimeline.fromTo(
+        heroVisual.querySelectorAll('.visual-card'),
+        { autoAlpha: 0, y: 30, scale: 0.96 },
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.14 },
+        0.24
+      );
+    }
+
+    const revealGroups = [
+      '.page-hero .container',
+      '.section-heading',
+      '.problem-grid',
+      '.service-grid',
+      '.works-block',
+      '.reason-list',
+      '.flow-list',
+      '.service-index-grid',
+      '.detail-grid',
+      '.contact-layout',
+      '.line-contact-grid',
+      '.privacy-content',
+      '.cta-inner'
+    ];
+
+    const itemSelectors = [
+      '.problem-card',
+      '.service-card',
+      '.work-card',
+      '.demo-card',
+      '.reason-list article',
+      '.flow-list li',
+      '.service-index-card',
+      '.content-block',
+      '.contact-note',
+      '.contact-form',
+      '.line-card',
+      '.email-card',
+      '.consultation-info'
+    ].join(',');
+
+    const observer = new IntersectionObserver((entries, instance) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const target = entry.target;
+        const items = target.matches(itemSelectors)
+          ? [target]
+          : Array.from(target.querySelectorAll(itemSelectors)).filter((item) => !item.dataset.motionRevealed);
+
+        if (items.length) {
+          items.forEach((item) => { item.dataset.motionRevealed = 'true'; });
+          gsap.fromTo(items, { autoAlpha: 0, y: 28 }, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.72,
+            stagger: 0.1,
+            ease: 'power3.out',
+            clearProps: 'opacity,visibility,transform'
+          });
+        } else {
+          gsap.fromTo(target, { autoAlpha: 0, y: 24 }, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'opacity,visibility,transform'
+          });
+        }
+
+        instance.unobserve(target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    revealGroups.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((element) => {
+        if (!element.closest('.hero')) observer.observe(element);
+      });
+    });
+  }
+
+  const sceneTarget = document.querySelector('[data-three-scene]');
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const slowConnection = connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || ''));
+  const sceneAllowed = sceneTarget
+    && !reducedMotion.matches
+    && !slowConnection
+    && window.matchMedia('(min-width: 769px)').matches
+    && 'WebGLRenderingContext' in window;
+
+  if (sceneAllowed) {
+    const startScene = () => {
+      import('./hero-scene.js').then(({ createHeroScene }) => {
+        createHeroScene(sceneTarget);
+      }).catch(() => {
+        sceneTarget.classList.add('three-unavailable');
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(startScene, { timeout: 1800 });
+    } else {
+      window.setTimeout(startScene, 700);
+    }
+  }
 })();
