@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+# 正式ドメイン確定後に Sitemap のURLを追記してください。
