@@ -19,6 +19,25 @@
     });
   }
 
+  const scrollProgress = document.createElement('div');
+  scrollProgress.className = 'scroll-progress';
+  scrollProgress.setAttribute('aria-hidden', 'true');
+  document.body.append(scrollProgress);
+
+  let progressFrame = 0;
+  const updateScrollProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+    scrollProgress.style.transform = `scaleX(${progress})`;
+    progressFrame = 0;
+  };
+  const requestProgressUpdate = () => {
+    if (!progressFrame) progressFrame = window.requestAnimationFrame(updateScrollProgress);
+  };
+  updateScrollProgress();
+  window.addEventListener('scroll', requestProgressUpdate, { passive: true });
+  window.addEventListener('resize', requestProgressUpdate, { passive: true });
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const gsapAvailable = typeof window.gsap !== 'undefined';
 
@@ -117,6 +136,77 @@
         if (!element.closest('.hero')) observer.observe(element);
       });
     });
+
+    const marquee = document.querySelector('[data-industry-marquee]');
+    if (marquee) {
+      const track = marquee.querySelector('.industry-track');
+      if (track) {
+        const marqueeTween = gsap.to(track, {
+          xPercent: -50,
+          duration: 32,
+          ease: 'none',
+          repeat: -1
+        });
+        const pauseMarquee = () => marqueeTween.pause();
+        const resumeMarquee = () => marqueeTween.resume();
+        marquee.addEventListener('pointerenter', pauseMarquee);
+        marquee.addEventListener('pointerleave', resumeMarquee);
+        marquee.addEventListener('focusin', pauseMarquee);
+        marquee.addEventListener('focusout', resumeMarquee);
+      }
+    }
+
+    const imageTargets = document.querySelectorAll('.work-thumb img, .demo-thumb img, .case-work-visual img');
+    if (imageTargets.length) {
+      const imageObserver = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          gsap.fromTo(entry.target, {
+            clipPath: 'inset(0 0 100% 0)',
+            scale: 1.05
+          }, {
+            clipPath: 'inset(0 0 0% 0)',
+            scale: 1,
+            duration: 0.9,
+            ease: 'power3.out',
+            clearProps: 'clipPath,transform'
+          });
+          instance.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+      imageTargets.forEach((image) => imageObserver.observe(image));
+    }
+
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const tiltTargets = document.querySelectorAll('.service-card, .work-card, .demo-card, .service-jump-card, .case-work-card');
+      tiltTargets.forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(card, {
+            rotationY: x * 4,
+            rotationX: y * -4,
+            y: -4,
+            transformPerspective: 900,
+            duration: 0.35,
+            ease: 'power2.out',
+            overwrite: true
+          });
+        });
+        card.addEventListener('pointerleave', () => {
+          gsap.to(card, {
+            rotationY: 0,
+            rotationX: 0,
+            y: 0,
+            duration: 0.45,
+            ease: 'power2.out',
+            overwrite: true,
+            clearProps: 'transform'
+          });
+        });
+      });
+    }
   }
 
   const sceneTarget = document.querySelector('[data-three-scene]');
