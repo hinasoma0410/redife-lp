@@ -68,10 +68,11 @@
 .benefit-card h3{margin:20px 0 10px;font-size:25px}
 .benefit-card p{color:#59665e}
 .case-work-grid{grid-template-columns:repeat(3,1fr)}
-.case-work-card{overflow:hidden;background:#fff;border:1px solid #d7ddd8;border-radius:20px}
-.case-work-visual{display:grid;place-items:center;aspect-ratio:16/10;background:var(--editorial-green-soft);color:var(--editorial-green);font-family:Georgia,serif;font-size:34px;font-weight:700;letter-spacing:.12em}
-.case-work-card:nth-child(2) .case-work-visual{background:#eee1cf;color:#6d5235}
-.case-work-card:nth-child(3) .case-work-visual{background:#dde3df;color:#3d5c4b}
+.case-work-card{overflow:hidden;background:#fff;border:1px solid #d7ddd8;border-radius:20px;box-shadow:0 14px 34px rgba(28,45,35,.06);transition:transform .25s ease,box-shadow .25s ease}
+.case-work-card:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(28,45,35,.11)}
+.case-work-visual{aspect-ratio:16/10;overflow:hidden;background:var(--editorial-green-soft);border-bottom:1px solid #d7ddd8}
+.case-work-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .45s ease}
+.case-work-card:hover .case-work-visual img{transform:scale(1.025)}
 .case-work-body{padding:24px}
 .case-work-body h3{margin:5px 0 8px;font-size:24px}
 .case-work-body p{color:#59665e;font-size:14px}
