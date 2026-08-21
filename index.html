@@ -15,10 +15,10 @@
   <link rel="canonical" href="https://hinasoma0410.github.io/redife-lp/">
   <link rel="stylesheet" href="assets/css/styles.css?v=20260821i">
   <link rel="stylesheet" href="assets/css/heading-rules.css?v=20260821b">
-  <link rel="stylesheet" href="assets/css/20260821_visual-guidance.css?v=20260821">
+  <link rel="stylesheet" href="assets/css/20260821_visual-guidance.css?v=20260822b">
   <link rel="stylesheet" href="assets/css/motion.css?v=20260821">
   <script src="assets/vendor/gsap-3.15.0.min.js" defer></script>
-  <script src="assets/js/site.js?v=20260821c" defer></script>
+  <script src="assets/js/site.js?v=20260822b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -90,18 +90,43 @@
           <div><p class="eyebrow">PROBLEMS</p><h2>こんな「ちょっと面倒」放置していませんか？</h2></div>
           <p>大きなDX計画は必要ありません。毎日・毎週くり返している手作業や、抜け漏れが起きやすいところから整理します。</p>
         </div>
-        <figure class="problem-visual problem-map-visual">
-          <img src="assets/images/20260821_problem-workflow-map.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="連絡、情報、Web発信の困りごとを一つの仕事の流れに整理するイメージ">
-        </figure>
-        <div class="problem-grid">
-          <article class="problem-card"><span>01</span><h3>見積もり後の連絡を忘れる</h3><p>顧客・案件・次回連絡日が頭の中やメモに散らばっている。</p></article>
-          <article class="problem-card"><span>02</span><h3>必要な情報があちこちに散らばる</h3><p>LINE、メール、表計算、紙のメモなどに情報が分かれ、探す時間が増えている。</p></article>
-          <article class="problem-card"><span>03</span><h3>商品やサービスの良さを発信できない</h3><p>日々の仕事が忙しく、実績や強みをWebにまとめる時間がない。</p></article>
+        <div class="problem-diagram" data-problem-diagram>
+          <div class="problem-points" aria-label="よくある三つの困りごと">
+            <article class="problem-point" data-diagram-item>
+              <figure><img src="assets/images/20260822_problem-envelope.png" width="1024" height="1024" loading="lazy" decoding="async" alt="通知が付いた封筒のイメージ"></figure>
+              <div><h3>見積もり後の連絡が追いつかない</h3><p>対応漏れや返信の遅れで、機会を逃してしまう。</p></div>
+            </article>
+            <article class="problem-point" data-diagram-item>
+              <figure><img src="assets/images/20260822_problem-folder.png" width="1024" height="1024" loading="lazy" decoding="async" alt="情報が複数のフォルダーに分かれているイメージ"></figure>
+              <div><h3>必要な情報があちこちに散らばる</h3><p>探すのに時間がかかり、作業が止まってしまう。</p></div>
+            </article>
+            <article class="problem-point" data-diagram-item>
+              <figure><img src="assets/images/20260822_problem-web.png" width="1024" height="1024" loading="lazy" decoding="async" alt="Web検索と問い合わせのイメージ"></figure>
+              <div><h3>Webからの問い合わせ その後の流れが不明確</h3><p>どこから連絡すればいいか分からず、問い合わせが滞る。</p></div>
+            </article>
+          </div>
+          <div class="problem-flow-hub" data-flow-hub aria-label="困りごとをまとめて整える">
+            <picture>
+              <source media="(max-width: 960px)" srcset="assets/images/20260822_problem-flow-mobile.png">
+              <img src="assets/images/20260822_problem-flow.png" width="1536" height="1024" loading="lazy" decoding="async" alt="三つの困りごとを一つの流れにまとめる図">
+            </picture>
+            <strong>まとめて<br>整えると</strong>
+          </div>
+          <div class="problem-result" data-diagram-result>
+            <figure class="problem-laptop"><img src="assets/images/20260822_problem-laptop.png" width="1254" height="1254" loading="lazy" decoding="async" alt="対応状況を一覧で確認できるパソコン画面のイメージ"></figure>
+            <ul class="problem-benefits">
+              <li>対応状況がひと目で分かる</li>
+              <li>必要な情報がすぐ見つかる</li>
+              <li>問い合わせからご成約までの流れが明確に</li>
+            </ul>
+          </div>
         </div>
         <div class="clarity-strip" aria-label="リダイフの整理の進め方">
-          <article><span>01</span><div><h3>見える</h3><p>やることと必要な情報をひと目で把握</p></div></article>
-          <article><span>02</span><div><h3>整える</h3><p>抜け漏れや重複を減らしてシンプルな流れに</p></div></article>
-          <article><span>03</span><div><h3>続けられる</h3><p>今の仕事に合わせて無理なく回る仕組みに</p></div></article>
+          <article data-clarity-item><figure><img src="assets/images/20260822_clarity-eye.png" width="1024" height="1024" loading="lazy" decoding="async" alt="見ることを表す目のアイコン"></figure><div><h3>見える</h3><p>やることや情報をひと目で把握</p></div></article>
+          <span class="clarity-arrow" aria-hidden="true"><img src="assets/images/20260822_clarity-arrow.png" width="1254" height="1254" loading="lazy" decoding="async" alt=""></span>
+          <article data-clarity-item><figure><img src="assets/images/20260822_clarity-list.png" width="1254" height="1254" loading="lazy" decoding="async" alt="情報整理を表すリストのアイコン"></figure><div><h3>整える</h3><p>ムダをなくしシンプルな流れに</p></div></article>
+          <span class="clarity-arrow" aria-hidden="true"><img src="assets/images/20260822_clarity-arrow.png" width="1254" height="1254" loading="lazy" decoding="async" alt=""></span>
+          <article data-clarity-item><figure><img src="assets/images/20260822_clarity-cycle.png" width="1254" height="1254" loading="lazy" decoding="async" alt="継続を表す循環のアイコン"></figure><div><h3>続けられる</h3><p>仕組み化して無理なく回る</p></div></article>
         </div>
       </div>
     </section>
@@ -118,7 +143,7 @@
               <h3>見積もり後の連絡を整える</h3>
               <p>見積もり提出後の「次に連絡する日」を見える化。記憶や手書きメモに頼らない状態へ整えます。</p>
               <ul><li>顧客・案件・次回連絡日を一覧管理</li><li>LINE公式・メール通知を環境に合わせて整備</li><li>対応履歴・連絡実施率・成約率を見える化</li></ul>
-              <div class="service-foot"><strong>参考料金 1万円〜</strong><a href="services/follow-up/">詳しく見る →</a></div>
+              <div class="service-foot"><strong class="service-price"><small>参考料金</small><span>1万円〜</span></strong><a href="services/follow-up/">詳しく見る →</a></div>
             </div>
           </article>
           <article class="service-card service-card-lp">
@@ -129,7 +154,7 @@
               <h3>伝わるLPをつくる</h3>
               <p>商品、サービス、実績や強みを1ページに整理し、問い合わせへ進みやすいページを制作します。</p>
               <ul><li>制作前ヒアリング</li><li>1ページLP＋問い合わせフォーム</li><li>公開前修正1回</li></ul>
-              <div class="service-foot"><strong>参考料金 5万円〜</strong><a href="services/case-lp/">詳しく見る →</a></div>
+              <div class="service-foot"><strong class="service-price"><small>参考料金</small><span>5万円〜</span></strong><a href="services/case-lp/">詳しく見る →</a></div>
             </div>
           </article>
           <article class="service-card service-card-automation">
@@ -140,7 +165,7 @@
               <h3>手作業を減らす</h3>
               <p>今の仕事の流れを聞き、AIも活用しながら必要な画面を提案。実際に動くものを見てから決められます。</p>
               <ul><li>対面またはオンラインでヒアリング</li><li>動く画面を確認してから納品</li><li>基本1名利用・文字と色の変更は料金内</li></ul>
-              <div class="service-foot"><strong>参考料金 1万円〜</strong><a href="services/business-app/">詳しく見る →</a></div>
+              <div class="service-foot"><strong class="service-price"><small>参考料金</small><span>1万円〜</span></strong><a href="services/business-app/">詳しく見る →</a></div>
             </div>
           </article>
         </div>
