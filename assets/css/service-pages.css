@@ -36,7 +36,7 @@
 .case-hero{padding:72px 0 90px;background:linear-gradient(118deg,rgba(255,255,255,.94) 0 52%,rgba(226,241,232,.86) 100%)}
 .case-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
 .case-hero h1{margin:0;font-size:clamp(52px,6.4vw,86px);line-height:1.13}
-.case-hero h1 em{color:var(--editorial-green);font-style:normal}
+.case-hero h1>span,.case-hero h1>em{display:inline-block}.case-hero h1 em{color:var(--editorial-green);font-style:normal}
 .case-hero-copy>p:last-child{max-width:680px;margin:30px 0 0;color:#536158;font-size:17px}
 .case-price-panel{padding:38px;background:rgba(255,255,255,.92);border:1px solid #d5ddd7;border-radius:26px;box-shadow:0 24px 55px rgba(30,67,46,.12)}
 .case-price-panel>small{font-weight:800}
