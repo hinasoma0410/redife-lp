@@ -9,6 +9,10 @@ h4 {
   word-break: auto-phrase;
 }
 
+.heading-unit {
+  display: inline-block;
+}
+
 @media (max-width: 640px) {
   .hero h1,
   .page-hero h1 {
