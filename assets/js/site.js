@@ -69,7 +69,6 @@
     const revealGroups = [
       '.page-hero .container',
       '.section-heading',
-      '.problem-grid',
       '.service-grid',
       '.works-block',
       '.reason-list',
@@ -84,6 +83,7 @@
 
     const itemSelectors = [
       '.problem-card',
+      '.problem-point',
       '.service-card',
       '.work-card',
       '.demo-card',
@@ -137,6 +137,58 @@
       });
     });
 
+    const problemDiagram = document.querySelector('[data-problem-diagram]');
+    if (problemDiagram) {
+      const diagramObserver = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const points = problemDiagram.querySelectorAll('[data-diagram-item]');
+          const flowImage = problemDiagram.querySelector('[data-flow-hub] picture');
+          const flowLabel = problemDiagram.querySelector('[data-flow-hub] > strong');
+          const laptop = problemDiagram.querySelector('.problem-laptop');
+          const benefits = problemDiagram.querySelectorAll('.problem-benefits li');
+
+          const diagramTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          diagramTimeline
+            .fromTo(points, { autoAlpha: 0, x: -30 }, { autoAlpha: 1, x: 0, duration: 0.62, stagger: 0.13 })
+            .fromTo(flowImage, { autoAlpha: 0, clipPath: 'inset(0 100% 0 0)' }, {
+              autoAlpha: 1,
+              clipPath: 'inset(0 0% 0 0)',
+              duration: 0.82,
+              clearProps: 'clipPath'
+            }, '-=0.34')
+            .fromTo(flowLabel, { autoAlpha: 0, scale: 0.82 }, { autoAlpha: 1, scale: 1, duration: 0.45 }, '-=0.38')
+            .fromTo(laptop, { autoAlpha: 0, x: 34, scale: 0.96 }, { autoAlpha: 1, x: 0, scale: 1, duration: 0.72 }, '-=0.42')
+            .fromTo(benefits, { autoAlpha: 0, x: 18 }, { autoAlpha: 1, x: 0, duration: 0.42, stagger: 0.1 }, '-=0.3');
+
+          instance.unobserve(problemDiagram);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      diagramObserver.observe(problemDiagram);
+    }
+
+    const clarityStrip = document.querySelector('.clarity-strip');
+    if (clarityStrip) {
+      const clarityObserver = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const items = clarityStrip.querySelectorAll('[data-clarity-item], .clarity-arrow');
+          gsap.fromTo(items, { autoAlpha: 0, y: 24, scale: 0.97 }, {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.62,
+            stagger: 0.12,
+            ease: 'power3.out',
+            clearProps: 'opacity,visibility,transform'
+          });
+          instance.unobserve(clarityStrip);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.14 });
+      clarityObserver.observe(clarityStrip);
+    }
+
     const marquee = document.querySelector('[data-industry-marquee]');
     if (marquee) {
       const track = marquee.querySelector('.industry-track');
@@ -156,7 +208,7 @@
       }
     }
 
-    const imageTargets = document.querySelectorAll('.problem-visual img, .service-visual img, .work-thumb img, .demo-thumb img, .case-work-visual img');
+    const imageTargets = document.querySelectorAll('.service-visual img, .work-thumb img, .demo-thumb img, .case-work-visual img');
     if (imageTargets.length) {
       const imageObserver = new IntersectionObserver((entries, instance) => {
         entries.forEach((entry) => {
