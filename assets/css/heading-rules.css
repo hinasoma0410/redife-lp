@@ -6,6 +6,7 @@ h4 {
   overflow-wrap: break-word;
   text-wrap: balance;
   word-break: normal;
+  word-break: auto-phrase;
 }
 
 @media (max-width: 640px) {
