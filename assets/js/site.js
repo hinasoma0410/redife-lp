@@ -156,7 +156,7 @@
       }
     }
 
-    const imageTargets = document.querySelectorAll('.work-thumb img, .demo-thumb img, .case-work-visual img');
+    const imageTargets = document.querySelectorAll('.problem-visual img, .work-thumb img, .demo-thumb img, .case-work-visual img');
     if (imageTargets.length) {
       const imageObserver = new IntersectionObserver((entries, instance) => {
         entries.forEach((entry) => {
