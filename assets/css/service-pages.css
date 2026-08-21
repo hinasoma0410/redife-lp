@@ -16,6 +16,7 @@
 .service-overview{padding:118px 0;border-top:1px solid rgba(53,108,77,.14);background:rgba(248,245,238,.86)}
 .service-overview:nth-of-type(even){background:rgba(255,255,255,.68)}
 .service-overview-head{display:grid;grid-template-columns:180px minmax(0,1fr);gap:50px;align-items:start}
+.service-overview-head>div{min-width:0}
 .service-overview-number{color:#8db19a;font-family:Georgia,serif;font-size:clamp(80px,10vw,140px);line-height:.85}
 .service-overview h2{margin:4px 0 20px;font-size:clamp(44px,5.5vw,72px);line-height:1.16}
 .service-overview-copy{max-width:800px;margin:0;color:#536158;font-size:17px}
