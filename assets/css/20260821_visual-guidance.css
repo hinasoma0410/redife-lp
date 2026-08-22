@@ -513,3 +513,39 @@
     font-size: 29px;
   }
 }
+
+/* Hero guidance: keep key choices readable for older visitors */
+.hero-actions .text-link {
+  color: var(--green-dark);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.trust-list {
+  gap: 14px 28px;
+  color: #34483d;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.trust-list li::before {
+  margin-right: 9px;
+  color: var(--green-dark);
+  font-size: 1.15em;
+}
+
+@media (max-width: 640px) {
+  .hero-actions .text-link {
+    font-size: 20px;
+  }
+
+  .trust-list {
+    font-size: 18px;
+  }
+
+  .trust-list li + li {
+    margin-top: 10px;
+  }
+}
