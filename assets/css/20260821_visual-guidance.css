@@ -61,7 +61,7 @@
 .problem-point h3 {
   margin: 0 0 7px;
   color: var(--ink);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.45;
   letter-spacing: -.01em;
 }
@@ -69,8 +69,8 @@
 .problem-point p {
   margin: 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .problem-flow-hub {
@@ -104,7 +104,7 @@
   top: 50%;
   width: 92px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.45;
   text-align: center;
   transform: translate(-50%, -50%);
@@ -133,7 +133,7 @@
   position: relative;
   padding-left: 30px;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.6;
 }
@@ -188,13 +188,13 @@
 .clarity-strip h3 {
   margin: 0 0 3px;
   color: var(--green-dark);
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .clarity-strip p {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -264,14 +264,20 @@
   min-height: 30px;
   padding: 5px 11px;
   background: rgba(255, 255, 255, .72);
+  font-size: 13px;
+}
+
+.service-number {
+  font-size: 14px;
 }
 
 .service-name {
   margin: 28px 0 4px;
   color: var(--green);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
-  letter-spacing: .1em;
+  line-height: 1.55;
+  letter-spacing: .07em;
 }
 
 .service-card h3 {
@@ -351,7 +357,7 @@
     left: 50%;
     top: 60%;
     width: 80px;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .problem-laptop {
@@ -391,12 +397,12 @@
   }
 
   .problem-point h3 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .problem-point p,
   .problem-benefits li {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .problem-flow-hub {
