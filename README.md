@@ -9,7 +9,7 @@
 - 依存ライブラリを最小化し、静的サイトとして安全性・速度・保守性を優先する
 
 ## 問い合わせ導線
-- 主導線：LINE（https://lin.ee/np0rjSq）
+- 主導線：LINE（https://lin.ee/VBoykaMo）
 - 補助窓口：redaif.contact@gmail.com
 - Webフォームでは個人情報を収集しない
 
