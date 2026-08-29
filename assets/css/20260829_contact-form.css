@@ -1,0 +1,152 @@
+.contact-form-card {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form-card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.form-intro {
+  margin: 0 0 26px;
+  color: var(--muted);
+}
+
+.contact-form-card .contact-form {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.contact-form-card .field label,
+.contact-form-card .privacy-check {
+  font-size: 17px;
+}
+
+.contact-form-card .field input,
+.contact-form-card .field select,
+.contact-form-card .field textarea {
+  min-height: 56px;
+  font-size: 17px;
+}
+
+.contact-form-card .field textarea {
+  min-height: 170px;
+}
+
+.optional {
+  margin-left: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.privacy-check {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: start;
+  gap: 12px;
+  margin: 6px 0 24px;
+  color: #435047;
+  line-height: 1.7;
+}
+
+.privacy-check input {
+  width: 22px;
+  height: 22px;
+  margin: 4px 0 0;
+  accent-color: var(--green);
+}
+
+.form-submit {
+  width: 100%;
+  min-height: 66px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.form-safety {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.form-safety a {
+  color: var(--green);
+  font-weight: 800;
+  word-break: break-all;
+}
+
+.spam-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.consultation-support-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.consultation-support-grid .contact-note,
+.consultation-support-grid .privacy-mini {
+  min-height: 100%;
+}
+
+.consultation-support-grid .contact-note {
+  padding: 32px;
+  border-radius: 24px;
+}
+
+.contact-form-card:target {
+  scroll-margin-top: 110px;
+  outline: 4px solid rgba(46, 110, 73, .22);
+  outline-offset: 6px;
+}
+
+@media (max-width: 960px) {
+  .line-contact-grid .line-card {
+    order: 0;
+  }
+
+  .line-contact-grid .contact-form-card {
+    order: 1;
+  }
+
+  .consultation-support-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form-card,
+  .consultation-support-grid .contact-note {
+    padding: 24px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 24px;
+  }
+
+  .contact-form-card .field label,
+  .contact-form-card .privacy-check,
+  .contact-form-card .field input,
+  .contact-form-card .field select,
+  .contact-form-card .field textarea {
+    font-size: 17px;
+  }
+
+  .form-safety {
+    font-size: 14px;
+  }
+}

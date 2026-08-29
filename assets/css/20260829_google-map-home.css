@@ -46,9 +46,12 @@ nav a { font-size: 15px; font-weight: 900; text-decoration: none; transition: co
 .eyebrow, .section-label, .card-kicker { margin-bottom: 16px; color: var(--green); font-size: 14px; font-weight: 900; letter-spacing: .14em; }
 .hero-lead { margin-bottom: 16px; color: var(--green-deep); font-size: clamp(21px,1.8vw,28px); line-height: 1.8; }
 .hero-sub { max-width: 690px; margin-bottom: 32px; color: var(--muted); font-size: clamp(18px,1.4vw,22px); }
+.hero-actions, .diagnosis-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 66px; padding: 14px 28px; border: 2px solid transparent; border-radius: 18px; box-shadow: 0 14px 30px rgba(18,62,44,.16); font-size: 17px; font-weight: 900; line-height: 1.4; text-align: center; text-decoration: none; transition: transform .22s ease, box-shadow .22s ease; }
 .button-primary { color: #fff; background: var(--green); }
 .button-light { color: var(--green-deep); background: #fff; }
+.form-cta-link { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; color: var(--green); font-size: 17px; font-weight: 900; text-align: center; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.diagnosis-actions .form-cta-link, .final-actions .form-cta-link { color: #fff; }
 .trust-list { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 32px 0 0; padding-left: 1.15em; color: #354b40; font-size: 16px; font-weight: 800; }
 
 .map-check-visual { position: relative; min-height: 590px; overflow: hidden; background: linear-gradient(145deg,#e8efe9,#f7f2e9); border: 1px solid var(--line); border-radius: 38px; box-shadow: 0 28px 70px rgba(35,48,40,.16); }
@@ -145,6 +148,11 @@ nav a { font-size: 15px; font-weight: 900; text-decoration: none; transition: co
 .advisor-columns > div { padding: 30px 32px; }
 .advisor-columns > div + div { border-left: 1px solid rgba(255,255,255,.16); }
 .advisor-columns li { color: #e1ebe5; }
+.advisor-extension { display: grid; grid-template-columns: minmax(250px,.8fr) minmax(0,1.2fr) auto; align-items: center; gap: 24px 38px; margin-top: 22px; padding: 26px 30px; color: var(--ink); background: #fff; border-radius: 20px; }
+.advisor-extension span { display: block; margin-bottom: 5px; color: var(--green); font-size: 13px; font-weight: 900; letter-spacing: .12em; }
+.advisor-extension h4, .advisor-extension p { margin: 0; }
+.advisor-extension p { color: var(--muted); font-size: 16px; line-height: 1.8; }
+.advisor-extension a { color: var(--green); font-weight: 900; white-space: nowrap; text-underline-offset: 5px; }
 
 .instagram-price { display: grid; grid-template-columns: .75fr 1.25fr; gap: 28px 60px; max-width: 1240px; margin: 0 auto 26px; padding: 38px 42px; background: #fff; border: 1px solid var(--line); border-radius: 28px; }
 .instagram-price > div:first-child > p:last-child { color: var(--muted); }
@@ -175,11 +183,14 @@ nav a { font-size: 15px; font-weight: 900; text-decoration: none; transition: co
 .subsidy-card a { color: var(--green); font-weight: 900; text-underline-offset: 5px; }
 
 .profile { display: grid; grid-template-columns: minmax(300px,.72fr) minmax(0,1.28fr); align-items: center; gap: clamp(55px,8vw,120px); color: #fff; background: var(--green-deep); }
-.profile-photo { position: relative; width: min(100%,500px); aspect-ratio: 1; margin: 0 auto; overflow: hidden; background: #111; border: 10px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+.profile-photo { position: relative; width: min(100%,500px); aspect-ratio: 1; margin: 0 auto; overflow: hidden; background: #111; border: 8px solid rgba(255,255,255,.1); border-radius: 50%; box-shadow: none; }
 .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 39%; transform: scale(1.86); }
 .profile-copy { max-width: 800px; }
 .profile-copy p { color: #e0ebe4; }
 .profile-copy strong { color: #fff; font-size: 23px; }
+.profile-social { display: inline-flex; align-items: center; gap: 11px; min-height: 54px; margin-top: 14px; padding: 12px 18px; color: #fff; border: 1px solid rgba(255,255,255,.36); border-radius: 999px; font-weight: 900; text-decoration: none; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+.profile-social svg, .footer-instagram svg { flex: 0 0 auto; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.profile-social .social-dot, .footer-instagram .social-dot { fill: currentColor; stroke: none; }
 
 .faq { background: var(--cream); }
 .faq-list { max-width: 1040px; margin: 0 auto; border-top: 1px solid var(--line); }
@@ -199,13 +210,16 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
 .footer-brand img { width: 46px; height: 46px; }
 .footer-links { flex-wrap: wrap; justify-content: flex-end; gap: 14px 28px; }
 .footer-links a { color: #d7e2db; font-size: 14px; }
+.footer-instagram { display: inline-flex; align-items: center; gap: 7px; }
+.footer-instagram svg { width: 19px; height: 19px; }
 
 :focus-visible { outline: 4px solid var(--amber); outline-offset: 5px; }
 @media (hover:hover) and (pointer:fine) {
   .button:hover { transform: translateY(-3px) scale(1.025); box-shadow: 0 20px 38px rgba(18,62,44,.24); }
   .work-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 28px 66px rgba(24,70,49,.18); }
+  .profile-social:hover { transform: translateY(-2px); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.72); }
   .work-card:hover img { transform: scale(1.05); }
-  nav a:not(.header-cta):hover, .mail-link:hover { color: #4c9a70; transform: scale(1.04); }
+  nav a:not(.header-cta):hover, .mail-link:hover, .form-cta-link:hover { color: #4c9a70; transform: scale(1.04); }
   .brand:hover { transform: scale(1.025); }
 }
 
@@ -219,6 +233,7 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .work-card:last-child { grid-column: 1/-1; width: calc(50% - 12px); justify-self: center; }
   .advisor-price-head { align-items: flex-start; flex-direction: column; }
   .monthly-price { text-align: left; }
+  .advisor-extension { grid-template-columns: 1fr; gap: 14px; }
   .instagram-price { grid-template-columns: 1fr; }
   .profile { grid-template-columns: .75fr 1.25fr; }
 }
@@ -229,7 +244,7 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .site-header { min-height: 76px; padding: 11px 18px; }
   .brand img { width: 44px; height: 44px; border-radius: 12px; }
   .brand strong { font-size: 18px; }
-  .brand small, nav a:not(.header-cta) { display: none; }
+  .brand small, .site-header nav a:not(.header-cta) { display: none; }
   .header-cta { padding: 10px 16px; font-size: 14px; }
   h1 { font-size: clamp(36px,10.4vw,49px); line-height: 1.32; }
   h1 br { display: none; }
@@ -237,6 +252,8 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .hero { gap: 52px; padding: 56px 20px 88px; }
   .hero-lead { font-size: 21px; }
   .button { width: 100%; min-height: 70px; }
+  .hero-actions, .diagnosis-actions { display: grid; width: 100%; }
+  .form-cta-link { width: 100%; min-height: 56px; }
   .trust-list { display: grid; gap: 10px; font-size: 16px; }
   .map-check-visual { min-height: 530px; border-radius: 26px; }
   .search-card { left: 5%; top: 17%; width: 90%; padding: 20px; }
@@ -269,6 +286,7 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .advisor-columns { grid-template-columns: 1fr; }
   .advisor-columns > div { padding: 26px 22px; }
   .advisor-columns > div + div { border-top: 1px solid rgba(255,255,255,.16); border-left: 0; }
+  .advisor-extension { padding: 24px; }
   .instagram-price { padding: 28px 22px; }
   .instagram-menu { grid-template-columns: 1fr; }
   .small-menu { align-items: flex-start; flex-direction: column; gap: 18px; padding: 26px 22px; }
