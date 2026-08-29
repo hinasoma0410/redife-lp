@@ -10,7 +10,7 @@
 
 ## 問い合わせ導線
 - 主導線：LINE（https://lin.ee/np0rjSq）
-- 補助窓口：redaif.okym@gmail.com
+- 補助窓口：redaif.contact@gmail.com
 - Webフォームでは個人情報を収集しない
 
 ## セキュリティ
