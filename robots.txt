@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://redaifu.com/sitemap.xml
+Sitemap: https://hinasoma0410.github.io/redife-lp/sitemap.xml
