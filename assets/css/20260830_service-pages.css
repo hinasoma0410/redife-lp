@@ -174,6 +174,57 @@
 .app-capability-row:hover p { color: #3c5347; }
 .app-capability-row:hover figure { transform: rotate(0) scale(1.06); }
 
+.prototype-example {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+  margin: 54px auto 0;
+  padding: 30px 34px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 22px;
+  background: rgba(255,255,255,.07);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.prototype-example h2 {
+  color: #87e0c2;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.prototype-example h3 {
+  margin: 8px 0 10px;
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+.prototype-example p {
+  max-width: 710px;
+  color: rgba(255,255,255,.72);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.prototype-example-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), border-color .3s ease, background .3s ease;
+}
+.prototype-example-link span { color: #87e0c2; font-size: 18px; }
+.prototype-example-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199,238,90,.58);
+  background: rgba(255,255,255,.08);
+}
+
 .app-principles {
   position: relative;
   min-height: 760px;
@@ -638,4 +689,8 @@
   .service-cta h2 { font-size: 43px; }
   .business-app-page .app-capability-row { grid-template-columns: 40px 1fr; }
   .business-app-page .app-capability-row figure { grid-column: 2; }
+  .prototype-example { grid-template-columns: 1fr; gap: 22px; margin-top: 38px; padding: 26px 22px; }
+  .prototype-example h3 { font-size: 25px; }
+  .prototype-example p { font-size: 16px; }
+  .prototype-example-link { justify-content: space-between; white-space: normal; }
 }
