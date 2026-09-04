@@ -53,13 +53,16 @@
         .from('.hero-actions, .trust-list', { opacity: 0, y: 22, duration: .55, stagger: .1 }, '-=.35')
         .from('.hero-orbit', { opacity: 0, scale: .82, rotate: -8, duration: 1.1 }, '-=.9');
     } else if (document.querySelector('.service-hero')) {
-      document.querySelector('.service-hero-visual')?.classList.add('is-revealed');
+      const serviceHeroVisual = document.querySelector('.service-hero-visual');
+      serviceHeroVisual?.classList.add('is-revealed');
       const serviceIntro = gsap.timeline({ defaults: { ease: 'power3.out' } });
       serviceIntro
         .from('.service-back, .service-code', { opacity: 0, y: 18, duration: .55, stagger: .1 })
         .from('.service-hero h1', { opacity: 0, y: 60, duration: .85 }, '-=.25')
-        .from('.service-hero-lead, .service-hero-actions', { opacity: 0, y: 24, duration: .6, stagger: .12 }, '-=.42')
-        .from('.service-hero-visual', { opacity: 0, scale: .84, rotate: -6, duration: 1.05 }, '-=.85');
+        .from('.service-hero-lead, .service-hero-actions', { opacity: 0, y: 24, duration: .6, stagger: .12 }, '-=.42');
+      if (serviceHeroVisual) {
+        serviceIntro.from(serviceHeroVisual, { opacity: 0, scale: .84, rotate: -6, duration: 1.05 }, '-=.85');
+      }
     }
 
     const observer = new IntersectionObserver((entries, instance) => {
