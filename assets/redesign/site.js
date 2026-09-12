@@ -27,7 +27,11 @@
   const categories = { map: 'Googleマップの整備', lp: 'LP・ホームページ制作', advisor: 'デジタル顧問・セットの相談', app: '業務改善ツール制作', follow: '追客整備', undecided: 'まだ決まっていない' };
   const chosen = categories[new URLSearchParams(window.location.search).get('service')];
   if (chosen && !form.elements.category.value) form.elements.category.value = chosen;
-  const showStatus = (message) => { status.textContent = message; };
+  const showStatus = (message, state = '') => { status.textContent = message; status.dataset.state = state; };
+  const submitButton = form.querySelector('[type="submit"]');
+  const submitLabel = submitButton.querySelector('[data-submit-label]');
+  let sending = false;
+  let sent = false;
   const messages = { name: 'お名前を入力してください。', email: 'メールアドレスの形式をご確認ください。', category: '相談したいことを選んでください。', message: '相談内容を入力してください。', privacy: '送信への同意を確認してください。', url: 'URLはhttps://またはhttp://から入力してください。' };
   const validate = () => {
     errorList.replaceChildren();
@@ -61,16 +65,65 @@
     const body = ['リダイフ 無料診断のお申し込み', '', 'お名前：' + value('name'), '店名・会社名：' + (value('company') || '未入力'), 'メールアドレス：' + value('email'), '相談したいこと：' + value('category'), 'ホームページ・GoogleマップのURL：' + (value('url') || '未入力'), '', '困っていること・相談内容：', value('message')].join('\n');
     return { subject, body };
   };
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (sending || sent) return;
     if (form.elements.website.value.trim()) return;
-    if (!validate()) { showStatus('入力内容をご確認ください。まだ送信されていません。'); return; }
-    const { subject, body } = compose();
-    showStatus('メールアプリで内容を確認し、送信してください。この画面では送信完了を確認できません。入力内容はそのまま残しています。');
-    const destination = 'mailto:redaif.contact@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.location.href = destination;
+    if (!validate()) { showStatus('入力内容をご確認ください。まだ送信されていません。', 'error'); return; }
+    const values = new FormData(form);
+    const value = (key) => String(values.get(key) || '').trim();
+    // This public form ID is an email alias, not an account credential.
+    const payload = {
+      access_key: value('access_key'),
+      subject: '【リダイフ】無料診断・お問い合わせ',
+      from_name: 'リダイフ公式サイト',
+      name: value('name'), email: value('email'), company: value('company'),
+      category: value('category'), url: value('url'), message: value('message'),
+      privacy: 'プライバシーポリシーを確認し、送信に同意済み',
+      botcheck: false
+    };
+    const controls = ['name', 'email', 'company', 'category', 'url', 'message', 'privacy'].map(name => form.elements[name]);
+    sending = true;
+    submitButton.disabled = true;
+    controls.forEach(input => { input.disabled = true; });
+    form.setAttribute('aria-busy', 'true');
+    submitLabel.textContent = '送信中…';
+    showStatus('送信しています。この画面を閉じずにお待ちください。');
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload), credentials: 'omit', redirect: 'error', signal: controller.signal
+      });
+      const result = await response.json();
+      if (response.ok && result.success === true) {
+        sent = true;
+        submitLabel.textContent = '送信済み';
+        showStatus('相談内容を送信しました。ご入力のメールアドレスへ、内容を確認して返信します。自動返信メールは送信されません。', 'success');
+      } else if (response.status === 429) {
+        showStatus('現在、フォームの受付が制限されています。入力内容は残しています。下のメールまたはLINEからご相談ください。', 'error');
+      } else if (response.status >= 500) {
+        showStatus('送信サービスで問題が発生し、送信結果を確認できませんでした。入力内容は残しています。繰り返し送信せず、下のメールまたはLINEをご利用ください。', 'error');
+      } else {
+        showStatus('送信を受け付けられませんでした。入力内容は残しています。入力内容をご確認ください。解決しない場合は、下のメールまたはLINEをご利用ください。', 'error');
+      }
+    } catch {
+      // A timeout or network failure does not prove that the server rejected the message.
+      showStatus('通信が途切れたため、送信結果を確認できませんでした。入力内容は残しています。繰り返し送信せず、下のメールまたはLINEから送信状況をお問い合わせください。', 'error');
+    } finally {
+      window.clearTimeout(timeout);
+      sending = false;
+      form.removeAttribute('aria-busy');
+      controls.forEach(input => { input.disabled = false; });
+      if (!sent) {
+        submitButton.disabled = false;
+        submitLabel.textContent = '相談内容を送信する';
+      }
+    }
   });
   document.querySelector('[data-copy-message]').addEventListener('click', async () => {
+    if (sending) return;
     if (!validate()) { showStatus('コピーする前に、入力内容と送信への同意をご確認ください。'); return; }
     const { subject, body } = compose();
     const text = '件名：' + subject + '\n\n' + body;
