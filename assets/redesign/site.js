@@ -24,7 +24,7 @@
   const summary = document.querySelector('[data-error-summary]');
   const errorList = summary.querySelector('ul');
   const fallbackText = document.querySelector('[data-fallback-text]');
-  const categories = { map: 'Googleマップの整備', lp: 'LP・ホームページ制作', advisor: '毎月のデジタル顧問', app: '業務効率化・業務アプリ導入', follow: '追客整備', undecided: 'まだ決まっていない' };
+  const categories = { map: 'Googleマップの整備', lp: 'LP・ホームページ制作', advisor: 'デジタル顧問・セットの相談', app: '業務改善ツール制作', follow: '追客整備', undecided: 'まだ決まっていない' };
   const chosen = categories[new URLSearchParams(window.location.search).get('service')];
   if (chosen && !form.elements.category.value) form.elements.category.value = chosen;
   const showStatus = (message) => { status.textContent = message; };
