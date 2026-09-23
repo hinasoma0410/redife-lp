@@ -62,3 +62,12 @@
 @media(max-width:700px){.seo-link-grid,.seo-compare{grid-template-columns:1fr;gap:24px}.seo-article{padding-top:12px;padding-bottom:48px}.seo-article-lead{font-size:18px}.seo-article>section{margin-top:36px}.seo-article-cta{padding:24px 20px}.seo-article-cta .actions{align-items:stretch;flex-direction:column}.seo-article .seo-article-header h1 .phrase{display:block}.seo-toc{display:grid;gap:8px}.seo-directory-link>a{display:block;padding:10px 0}.seo-directory-link>span{display:none}}
 .seo-article-header h1 .phrase{display:block}
 @media(max-width:360px){.seo-article h1{font-size:28px}}
+
+/* Article dates and author; keep each label together on narrow screens. */
+.article-meta{display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:14px;line-height:1.75}.article-meta>span{display:inline-block}.article-meta a{color:inherit}
+
+/* Service area above the footer copyright. */
+.footer-business{flex-basis:100%}.footer-area{margin:0 0 8px;color:var(--muted);font-size:12px;line-height:1.75}
+
+/* Operator background and existing work links. */
+.profile-details{margin-top:24px}.profile-details h3{font-family:var(--sans);font-size:18px;margin:24px 0 10px}.profile-details ul{padding-left:1.4em}.profile-details li+li{margin-top:6px}
