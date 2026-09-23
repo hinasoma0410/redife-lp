@@ -1,0 +1,5 @@
+.analytics-banner{position:fixed;inset:auto 16px 16px;z-index:90;max-width:680px;margin-inline:auto;padding:22px 26px;background:#fff;border:1px solid #cbd5ce;border-radius:12px;box-shadow:0 4px 24px #20292326;max-height:calc(100dvh - 32px);overflow:auto;font-size:14px;line-height:1.8}
+.analytics-banner h2{font-family:var(--sans);font-size:18px;line-height:1.6;margin:0 0 8px}
+.analytics-banner p{margin:0 0 14px}.analytics-actions{display:flex;flex-wrap:wrap;gap:10px}.analytics-actions button{flex:1;min-width:120px;min-height:44px;border:1px solid var(--green);border-radius:6px;padding:9px 18px;background:#fff;color:var(--green);font-weight:700}.analytics-actions button:hover{background:var(--soft)}
+.analytics-settings{border:0;background:transparent;padding:8px 0;color:var(--green);text-decoration:underline;text-underline-offset:.3em;font-size:inherit;min-height:44px}
+@media(max-width:400px){.analytics-banner{inset:auto 10px 10px;padding:18px}.analytics-actions{gap:8px}.analytics-actions button{padding:9px 10px;min-width:110px}}

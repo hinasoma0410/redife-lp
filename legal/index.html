@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://redaifu.com/assets/redesign/hero-shop.webp">
 <meta name="theme-color" content="#194c3d">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
 <link rel="icon" href="/assets/images/20260822_redife-smile-logo.jpg">
 <link rel="preload" href="/assets/redesign/serif-jp.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/redesign/site.css">
+<link rel="stylesheet" href="/assets/redesign/analytics.css">
+<script defer src="/assets/redesign/analytics.js"></script>
 <script defer src="/assets/redesign/site.js"></script>
 </head>
 <body>
@@ -37,6 +39,7 @@
         <div><dt>キャンセル・解約</dt><dd>申込日から7日以内、かつサービス着手前まではキャンセルできます。サービス着手後のキャンセル料および返金の取扱いは、ご契約前に書面でご案内します。デジタル顧問の最低契約期間は3か月で、以降は1か月更新です。各サービスの顧問セット価格は、顧問契約を3か月以上継続いただくことが条件です。3か月未満で顧問契約を終了する場合の取扱いも、ご契約前に書面でご案内します。</dd></div>
       </dl><div class="utility-return"><a class="link-arrow" href="/services/">サービスと料金を確認する<img class="icon" src="/assets/redesign/icons/arrow-right.svg" width="26" height="26" alt="" aria-hidden="true"></a> <a class="link-arrow" href="/contact/">お問い合わせへ<img class="icon" src="/assets/redesign/icons/arrow-right.svg" width="26" height="26" alt="" aria-hidden="true"></a></div></div></section>
 </main>
-<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="/" aria-label="リダイフ トップ"><img src="/assets/images/20260822_redife-smile-logo.jpg" width="44" height="44" alt=""><strong>リダイフ</strong><small>小さなお店・会社のデジタル担当</small></a><nav class="footer-nav" aria-label="フッターメニュー"><a href="/services/">サービス</a><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/legal/">特定商取引法に基づく表記</a></nav><small class="copyright">© 2026 リダイフ</small></div></footer>
+<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="/" aria-label="リダイフ トップ"><img src="/assets/images/20260822_redife-smile-logo.jpg" width="44" height="44" alt=""><strong>リダイフ</strong><small>小さなお店・会社のデジタル担当</small></a><nav class="footer-nav" aria-label="フッターメニュー"><a href="/services/">サービス</a><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/legal/">特定商取引法に基づく表記</a><button class="analytics-settings" type="button" data-analytics-settings aria-controls="analytics-consent" aria-expanded="false" hidden>アクセス解析の設定</button></nav><small class="copyright">© 2026 リダイフ</small></div></footer>
+<section class="analytics-banner" id="analytics-consent" data-analytics-banner hidden aria-label="アクセス解析の設定"><h2>アクセス解析へのご協力</h2><p>サイト改善のため、Google アナリティクスで閲覧状況や相談ボタンの利用を計測します。許可した場合にCookieを利用します。選択は後から変更できます。<a href="/privacy/#analytics">詳しい説明</a></p><div class="analytics-actions"><button type="button" data-analytics-allow>許可する</button><button type="button" data-analytics-deny>許可しない</button></div></section>
 </body>
 </html>
