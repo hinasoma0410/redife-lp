@@ -101,6 +101,7 @@
         sent = true;
         submitLabel.textContent = '送信済み';
         showStatus('相談内容を送信しました。ご入力のメールアドレスへ、内容を確認して返信します。自動返信メールは送信されません。', 'success');
+        document.dispatchEvent(new Event('redaifu:contact-success'));
       } else if (response.status === 429) {
         showStatus('現在、フォームの受付が制限されています。入力内容は残しています。下のメールまたはLINEからご相談ください。', 'error');
       } else if (response.status >= 500) {
