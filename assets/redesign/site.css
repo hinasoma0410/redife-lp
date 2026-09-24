@@ -71,3 +71,7 @@
 
 /* Operator background and existing work links. */
 .profile-details{margin-top:24px}.profile-details h3{font-family:var(--sans);font-size:18px;margin:24px 0 10px}.profile-details ul{padding-left:1.4em}.profile-details li+li{margin-top:6px}
+
+
+/* Article diagrams remain responsive and do not alter existing section layouts. */
+.article-illustration{margin:28px 0}.article-illustration img{width:100%;height:auto}.article-illustration figcaption{margin-top:10px}
