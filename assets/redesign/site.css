@@ -75,3 +75,8 @@
 
 /* Article diagrams remain responsive and do not alter existing section layouts. */
 .article-illustration{margin:28px 0}.article-illustration img{width:100%;height:auto}.article-illustration figcaption{margin-top:10px}
+
+/* Article titles wrap only between editorially chosen phrases. */
+.seo-article h1.article-title{font-size:clamp(24px,3.6vw,48px);text-wrap:initial}
+.seo-article h1.article-title .phrase{display:block;white-space:nowrap}
+.article-cover{margin:28px 0}.article-cover img{width:100%;height:auto}
