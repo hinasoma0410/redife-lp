@@ -80,3 +80,21 @@
 .seo-article h1.article-title{font-size:clamp(24px,3.6vw,48px);text-wrap:initial}
 .seo-article h1.article-title .phrase{display:block;white-space:nowrap}
 .article-cover{margin:28px 0}.article-cover img{width:100%;height:auto}
+
+/* Readable, linked decision diagrams: each row is a choice, not a sequence. */
+.article-decision{margin:28px 0;padding:28px;background:#f0f2eb;border:1px solid var(--line)}
+.article-decision figcaption{font-family:var(--serif);font-size:22px;color:var(--green);font-weight:600;margin-bottom:22px}
+.article-decision-paths{list-style:none;padding:0;margin:0}
+.seo-article .article-decision-path{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);align-items:center;gap:16px;margin:0;padding:18px 0;border-top:1px solid var(--line)}
+.article-decision-case{font-size:18px;font-weight:600;line-height:1.7;margin:0}
+.article-decision-case .phrase{display:block}
+.article-decision-arrow{font-size:26px;text-align:center;color:var(--green)}
+.article-decision-result{display:flex;flex-direction:column;gap:4px;background:white;border:1px solid #a8bbb0;padding:16px 20px;text-decoration:none;line-height:1.6}
+.article-decision-result strong{font-size:22px}.article-decision-result>span{font-size:14px}
+.article-decision-result .article-decision-link{text-decoration:underline;text-underline-offset:.25em;margin-top:3px}
+.article-decision-result:hover{background:#e4ede4}
+.article-decision .article-decision-note{font-size:14px;line-height:1.8;margin:14px 0 0}
+#seven-day-note{scroll-margin-top:110px}
+@media(max-width:600px){.article-decision{padding:20px 16px}.article-decision figcaption{font-size:20px}.seo-article .article-decision-path{grid-template-columns:minmax(0,1fr);gap:6px}.article-decision-case{font-size:18px}.article-decision-arrow{justify-self:start;line-height:1;transform:rotate(90deg);margin:2px 12px}.article-decision-result{padding:12px 16px}}
+
+@media(max-width:600px){.article-decision figcaption .phrase{display:block}}
