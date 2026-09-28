@@ -18,3 +18,14 @@
 .article-memo{padding:24px;border-left:3px solid var(--green);background:var(--soft);margin:24px 0;line-height:2}
 .article-memo h3{font-size:21px}
 @media(max-width:600px){.article-stages{padding:22px 18px}.article-stages ol{grid-template-columns:1fr;gap:35px}.article-stages li+li::after{content:'↓';left:0;top:-31px}.article-stages li::before{float:left;margin:0 12px 0 0}.article-stages li span{padding-left:31px;margin-top:4px}.article-memo{padding:20px 16px}.article-table th,.article-table td{padding:12px}}
+
+/* New guides: readable jump navigation and selectable email templates. */
+.article-jump{display:grid;gap:10px;padding:22px 24px;margin:28px 0;background:var(--soft);border:1px solid var(--line)}
+.article-jump strong{color:var(--green)}.article-jump a{padding:5px 0;text-underline-offset:.25em}
+.article-email{border:1px solid var(--line);border-left:4px solid var(--green);padding:24px 28px;margin:20px 0 36px;background:#fffdf8}
+.article-email p{line-height:1.95}.article-email p:last-child{margin-bottom:0}
+.article-related{border-top:1px solid var(--line);margin-top:40px;padding-top:28px}.article-related h2{font-size:24px}
+.article-new h3{margin-top:30px}.article-new .article-memo h3{margin-top:0}
+.article-new code{font-size:.9em;overflow-wrap:anywhere}
+.article-new .article-title .phrase{white-space:normal;word-break:keep-all;overflow-wrap:break-word}
+@media(max-width:600px){.article-email{padding:20px 16px}.article-jump{padding:20px 16px}.article-new .article-stages figcaption{font-size:20px}}
