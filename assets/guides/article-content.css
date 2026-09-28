@@ -1,0 +1,20 @@
+/* Scoped article comparisons, sequential diagrams and copyable preparation notes. */
+.seo-article h3[id]{scroll-margin-top:110px}
+.article-table-wrap{max-width:100%;overflow-x:auto;margin:24px 0 8px}
+.article-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.85;text-align:left}
+.article-table caption{text-align:left;font-weight:700;color:var(--green);padding-bottom:12px}
+.article-table th,.article-table td{padding:16px;border:1px solid var(--line);vertical-align:top;min-width:170px}
+.article-table th{background:var(--soft);font-weight:600}
+.article-table tbody th{min-width:112px;width:21%}
+.article-table-hint{margin-bottom:24px}
+.article-stages{margin:28px 0;padding:24px;background:var(--soft);border:1px solid var(--line)}
+.article-stages figcaption{font-family:var(--serif);font-size:22px;color:var(--green);font-weight:600;margin-bottom:22px}
+.article-stages ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;gap:32px;margin:0;padding:0;counter-reset:stage}
+.article-stages li{position:relative;counter-increment:stage;margin:0!important;line-height:1.7}
+.article-stages li::before{content:counter(stage,decimal-leading-zero);display:block;color:var(--green);font-size:14px;font-weight:700;margin-bottom:8px}
+.article-stages li+li::after{content:'→';position:absolute;left:-25px;top:30px;color:var(--green)}
+.article-stages li strong,.article-stages li span{display:block}.article-stages li span{font-size:14px;margin-top:8px}
+.article-stages a{display:block;text-decoration:none}.article-stages a strong{text-decoration:underline;text-underline-offset:.3em}
+.article-memo{padding:24px;border-left:3px solid var(--green);background:var(--soft);margin:24px 0;line-height:2}
+.article-memo h3{font-size:21px}
+@media(max-width:600px){.article-stages{padding:22px 18px}.article-stages ol{grid-template-columns:1fr;gap:35px}.article-stages li+li::after{content:'↓';left:0;top:-31px}.article-stages li::before{float:left;margin:0 12px 0 0}.article-stages li span{padding-left:31px;margin-top:4px}.article-memo{padding:20px 16px}.article-table th,.article-table td{padding:12px}}
