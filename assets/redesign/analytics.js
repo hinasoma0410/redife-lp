@@ -92,7 +92,13 @@
     if (!link) return;
     try {
       const url = new URL(link.href);
-      if (url.protocol === 'https:' && url.hostname === 'lin.ee' && url.pathname === '/VBoykaMo') track('line_click');
+      if (url.protocol === 'https:' && url.hostname === 'lin.ee' && url.pathname === '/VBoykaMo') {
+        track('line_click');
+      } else if (url.protocol === 'https:' && url.hostname === 'redaifu.com' && url.pathname === '/contact/') {
+        track('contact_click');
+      } else if (url.protocol === 'mailto:' && url.pathname.toLowerCase() === 'redaif.contact@gmail.com') {
+        track('email_click');
+      }
     } catch { /* Ignore links that are not valid URLs. */ }
   });
   // Emitted only after Web3Forms confirms successful submission; carries no form data.
