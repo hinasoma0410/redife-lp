@@ -1,0 +1,27 @@
+/* Review guide only: examples, decision branches and publication steps. */
+.review-guide>h2{margin-top:56px;padding-bottom:16px;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.review-guide h2 .phrase,.review-guide h3 .phrase{display:inline-block;max-width:100%}
+.review-guide h1 small{display:block;font-size:.58em;margin-top:16px;line-height:1.7}
+.review-guide .title-divider{font-size:0}
+.review-guide h1 small .phrase{display:inline-block!important}
+.review-guide .decision,.review-guide .process{margin:30px 0;padding:26px 20px;background:#f0f2eb;border:1px solid #d8dfd1;border-radius:12px}
+.review-guide figcaption{font-size:20px;font-weight:600;text-align:center;line-height:1.7;margin-bottom:22px}
+.review-guide .origin{background:#194c3d;color:#fff;padding:15px;text-align:center;border-radius:8px}
+.review-guide .branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.review-guide .branches>div{text-align:center;min-width:0}
+.review-guide .branches strong{display:block;border:1px solid #becbb8;background:#fff;padding:15px 5px;font-size:15px;border-radius:8px}
+.review-guide .branches p{font-size:14px;line-height:1.7;margin:12px 0}
+.review-guide .branches a{font-size:14px}.review-guide .arrow{display:block;font-size:24px;line-height:2}
+.review-guide .diagram-note{font-size:14px;border-top:1px solid #cad5c5;padding-top:17px;margin-bottom:0}
+.review-guide .process ol{list-style:none;padding:0;display:flex;gap:32px;margin:0}
+.review-guide .process li{flex:1;min-width:0;position:relative;background:#fff;padding:15px 8px;text-align:center;border:1px solid #cad4c3;border-radius:8px;line-height:1.7;margin:0}
+.review-guide .process li+li:before{content:"→";position:absolute;left:-28px;top:22px;color:#557262}
+.review-guide .process strong,.review-guide .process span{display:block}.review-guide .process span{font-size:14px;margin-top:8px}
+.review-guide blockquote{margin:20px 0 32px;padding:18px 24px;border-left:4px solid #688371;background:#fffdf8}
+.review-guide blockquote p{margin:0;line-height:2}
+.review-guide .steps{padding-left:30px}.review-guide .steps li{padding:8px 0 8px 8px}
+.review-guide .trouble dt{font-weight:bold;color:var(--green);margin-top:26px}.review-guide .trouble dd{margin:8px 0 0}
+.review-guide .related{margin-top:55px;padding:28px;background:var(--soft);border-left:3px solid var(--green)}
+.review-guide .related h2{font-size:24px}.review-guide .related p{margin-bottom:0}
+.review-guide .sources{margin-top:48px;font-size:14px}.review-guide .sources h2{font-size:22px}
+@media(max-width:600px){.review-guide>h2{margin-top:42px;font-size:23px}.review-guide h3{font-size:20px}.review-guide .decision,.review-guide .process{padding:22px 16px}.review-guide .branches{display:block;margin-left:13px;border-left:2px solid #b6c5b1;padding-left:22px}.review-guide .branches>div{position:relative;margin-top:25px;padding-bottom:8px}.review-guide .branches .arrow{display:none}.review-guide .branches>div:before{content:"→";position:absolute;left:-25px;top:15px;font-size:18px;color:#557262}.review-guide .branches strong{padding:13px 6px}.review-guide .decision .origin{font-size:15px}.review-guide .process ol{display:block}.review-guide .process li+li{margin-top:32px}.review-guide .process li+li:before{content:"↓";left:calc(50% - 8px);top:-33px}.review-guide blockquote{padding:18px}.review-guide .related{padding:22px 18px}.review-guide h1 small{font-size:19px}}
