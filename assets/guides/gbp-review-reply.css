@@ -25,3 +25,9 @@
 .review-guide .related h2{font-size:24px}.review-guide .related p{margin-bottom:0}
 .review-guide .sources{margin-top:48px;font-size:14px}.review-guide .sources h2{font-size:22px}
 @media(max-width:600px){.review-guide>h2{margin-top:42px;font-size:23px}.review-guide h3{font-size:20px}.review-guide .decision,.review-guide .process{padding:22px 16px}.review-guide .branches{display:block;margin-left:13px;border-left:2px solid #b6c5b1;padding-left:22px}.review-guide .branches>div{position:relative;margin-top:25px;padding-bottom:8px}.review-guide .branches .arrow{display:none}.review-guide .branches>div:before{content:"→";position:absolute;left:-25px;top:15px;font-size:18px;color:#557262}.review-guide .branches strong{padding:13px 6px}.review-guide .decision .origin{font-size:15px}.review-guide .process ol{display:block}.review-guide .process li+li{margin-top:32px}.review-guide .process li+li:before{content:"↓";left:calc(50% - 8px);top:-33px}.review-guide blockquote{padding:18px}.review-guide .related{padding:22px 18px}.review-guide h1 small{font-size:19px}}
+
+/* Direct links stay compact before the cover; stack on small screens. */
+.review-guide .article-jump{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+.review-guide .article-jump strong{grid-column:1/-1}
+.review-guide .article-jump a{line-height:1.7}
+@media(max-width:600px){.review-guide .article-jump{grid-template-columns:1fr}}
