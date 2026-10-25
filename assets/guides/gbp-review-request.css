@@ -36,3 +36,9 @@
 .request-guide h2,.request-guide h3{text-wrap:pretty}
 .request-guide a{overflow-wrap:anywhere}
 @media(max-width:600px){.request-guide table{font-size:14px}.request-guide th,.request-guide td{padding:11px 9px}.request-guide .destination{font-size:16px}.request-guide .related h2{font-size:21px}}
+
+/* Direct links stay compact before the cover; stack on small screens. */
+.request-guide .article-jump{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+.request-guide .article-jump strong{grid-column:1/-1}
+.request-guide .article-jump a{line-height:1.7}
+@media(max-width:600px){.request-guide .article-jump{grid-template-columns:1fr}}
