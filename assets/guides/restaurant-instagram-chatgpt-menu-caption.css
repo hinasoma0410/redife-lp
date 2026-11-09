@@ -1,0 +1,27 @@
+/* This guide only. Shared site CSS has no style for these examples, tables, or the flow figure. */
+.breadcrumb{overflow-wrap:anywhere}
+.caption-guide>h2{margin-top:48px;padding-bottom:8px;border-bottom:2px solid var(--line);scroll-margin-top:110px}
+.caption-guide h3{scroll-margin-top:110px}
+.caption-guide .ai-note,.caption-guide figcaption span{display:block;margin-top:8px;color:var(--muted);font-size:14px;font-weight:400;line-height:1.7}
+.caption-guide blockquote{margin:20px 0 28px;padding:18px 24px;border-left:4px solid var(--line);background:#fffdf8;overflow-wrap:anywhere}
+.caption-guide blockquote p{margin:8px 0}
+.caption-guide blockquote p:first-child{margin-top:0}
+.caption-guide blockquote p:last-child{margin-bottom:0}
+.caption-guide .table-wrap{max-width:100%;margin:24px 0}
+.caption-guide .scroll-hint{display:none;margin:0 0 8px;font-size:14px;font-weight:700}
+.caption-guide .table-scroll{width:100%;max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:#fff}
+.caption-guide table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.75}
+.caption-guide th,.caption-guide td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.caption-guide th{background:var(--soft)}
+.caption-guide #DIAG-01{max-width:640px;margin:28px auto}
+.caption-guide #DIAG-01 a{display:block}
+.caption-guide #DIAG-01 img{display:block;width:100%;height:auto}
+.caption-guide #DIAG-01 a span{display:inline-block;margin-top:8px}
+.caption-guide figcaption{margin-top:10px;line-height:1.7}
+@media(max-width:720px){
+.caption-guide .scroll-hint{display:block}
+.caption-guide table{min-width:560px}
+.caption-guide #table-4{min-width:680px}
+.caption-guide th,.caption-guide td{min-width:6.5em}
+.caption-guide blockquote{padding:18px 16px}
+}
