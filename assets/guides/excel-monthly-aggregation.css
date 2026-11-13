@@ -1,0 +1,22 @@
+/* This guide only (excel-monthly-aggregation). Patterned on restaurant-instagram-chatgpt-menu-caption.css. */
+.preview-banner{background:#7a1f1f;color:#fff;padding:12px 16px;font-weight:700;text-align:center;line-height:1.6}
+.breadcrumb{overflow-wrap:anywhere}
+.aggregation-guide>h2{margin-top:48px;padding-bottom:8px;border-bottom:2px solid var(--line);scroll-margin-top:110px}
+.aggregation-guide h3{scroll-margin-top:110px}
+.aggregation-guide .ai-note{display:block;margin-top:8px;color:var(--muted);font-size:14px;font-weight:400;line-height:1.7}
+.aggregation-guide .table-wrap{max-width:100%;margin:24px 0}
+.aggregation-guide .scroll-hint{display:none;margin:0 0 8px;font-size:14px;font-weight:700}
+.aggregation-guide .table-scroll{width:100%;max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:#fff}
+.aggregation-guide table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.75}
+.aggregation-guide th,.aggregation-guide td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.aggregation-guide th{background:var(--soft)}
+.aggregation-guide .article-cta{margin:40px 0 8px;padding:24px;border:1px solid var(--line);border-left:4px solid var(--green);background:var(--soft)}
+.aggregation-guide .article-cta p:last-child{margin-bottom:0}
+.aggregation-guide .references li{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:720px){
+.aggregation-guide .scroll-hint{display:block}
+.aggregation-guide table.table-cols-4{min-width:600px}
+.aggregation-guide table.table-cols-3{min-width:520px}
+.aggregation-guide th,.aggregation-guide td{min-width:6.5em}
+.aggregation-guide .article-cta{padding:20px 16px}
+}
